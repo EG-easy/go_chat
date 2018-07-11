@@ -40,7 +40,7 @@ func main() {
 	go r.run()
 	// サーバーを開始します
 	log.Println("webサーバーを起動します。ポート：", *addr)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(*addr, nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
 }
