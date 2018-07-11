@@ -48,7 +48,7 @@ func main() {
 	gomniauth.WithProviders(
 		facebook.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/facebook"),
 		github.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/github"),
-		google.New("346358804589-7r228bs4i6g4hkvagpcl0bphau7i2grh.apps.googleusercontent.com", "mC9iZcU7rAsKAjN6pvLTNsmG", "http://localhost:8080/auth/callback/google"),
+		google.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/google"),
 	)
 	r := newRoom()
 	r.tracer = trace.New(os.Stdout)
