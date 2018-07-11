@@ -7,7 +7,10 @@ import (
 	"path/filepath"
 	"sync"
 	"flag"
+	"os"
+	"go_programing/trace"
 )
+
 
 //templは一つのテンプレートを表します
 type templateHandler struct {
@@ -29,6 +32,7 @@ func main() {
 	var addr = flag.String("addr", ":8080", "アプリケーションのアドレス")
 	flag.Parse() //フラグを解釈します
 	r := newRoom()
+	r.tracer = trace.New(os.Stdout)
 	//ルート
 	http.Handle("/", &templateHandler{filename: "chat.html"})
 	http.Handle("/room", r)
