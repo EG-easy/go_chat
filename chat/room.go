@@ -21,6 +21,7 @@ type room struct {
 	tracer trace.Tracer
 }
 
+//newRoomはすぐに利用できるチャットルームを生成して返します。
 func newRoom() *room{
 	return &room{
 		forward: make(chan *message),
