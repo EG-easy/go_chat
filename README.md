@@ -1,4 +1,5 @@
 # go_chat
+simple browser chatting application written in golang
 
 # Quick Start!
 0. git clone this repository
